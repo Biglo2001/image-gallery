@@ -1,0 +1,37 @@
+:root { color-scheme: dark; font-family: Arial, sans-serif; background: #000; color: #fff; }
+* { box-sizing: border-box; }
+body { min-height: 100vh; margin: 0; padding: 36px 20px; background: #000; }
+.page-content { z-index: 1; display: block; width: min(100%, 1100px); max-width: none; min-height: calc(100vh - 72px); margin: 0 auto; padding: 70px clamp(20px, 5vw, 64px) 32px; border: 2px solid #fff; text-align: left; }
+#music-toggle { position: fixed; z-index: 11; top: 36px; right: 20px; width: 40px; height: 40px; padding: 0; font-size: 1.2rem; }
+.gallery-header { max-width: 640px; margin: 0 auto 44px; text-align: center; }
+.eyebrow { margin: 0 0 12px; font-size: .72rem; letter-spacing: .2em; }
+h1 { margin: 0 0 16px; font-size: clamp(2rem, 5vw, 3.2rem); }
+.intro { max-width: 530px; margin: 0 auto; color: #c8c8c8; line-height: 1.6; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 22px; }
+.artwork { min-width: 0; padding: 0; overflow: hidden; border: 2px solid #fff; color: #fff; background: #000; text-align: left; cursor: pointer; transition: transform .2s ease, background .2s ease; }
+.artwork:hover { transform: translateY(-4px); background: #181818; }
+.artwork:focus-visible, .viewer-close:focus-visible, .download-button:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.artwork img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #151515; }
+.artwork-caption { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 16px; }
+.artwork-caption strong { font-size: 1rem; }
+.artwork-caption span { color: #c8c8c8; font-size: .85rem; }
+.footer-note { margin: 30px 0 0; color: #aaa; font-size: .85rem; }
+dialog { width: min(1100px, calc(100% - 32px)); max-width: none; max-height: calc(100% - 32px); padding: 0; border: 2px solid #fff; color: #fff; background: #000; }
+dialog::backdrop { background: rgb(0 0 0 / .88); }
+.viewer-frame { position: relative; padding: clamp(16px, 3vw, 30px); }
+.viewer-close { position: fixed; z-index: 20; top: 36px; right: 20px; width: 42px; height: 42px; border: 2px solid #fff; color: #fff; background: #000; font-size: 1.7rem; cursor: pointer; }
+.viewer-image-wrap { display: grid; min-height: 220px; max-height: 72vh; place-items: center; background: #090909; }
+#viewer-image { display: block; max-width: 100%; max-height: 72vh; object-fit: contain; }
+.viewer-info { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-top: 20px; }
+.viewer-info .eyebrow { color: #bbb; }
+.viewer-info h2 { margin: 0; font-size: 1.2rem; }
+.viewer-title-wrap { flex: 1 1 auto; min-width: 0; }
+.viewer-actions { display: flex; flex: 0 1 auto; flex-wrap: wrap; justify-content: flex-end; gap: 12px; }
+.download-button { display: inline-block; padding: 12px 16px; border: 2px solid #fff; color: #fff; text-decoration: none; white-space: nowrap; transition: transform .2s ease, background .2s ease; }
+.download-button:hover { transform: scale(1.04); background: #333; }
+.instagram-button { margin-top: 0; }
+@media (max-width: 520px) { body { padding: 12px; } .page-content { min-height: calc(100vh - 24px); padding: 62px 18px 24px; } .gallery { gap: 14px; } .viewer-info { align-items: flex-start; flex-wrap: wrap; } .viewer-actions { justify-content: flex-start; } #music-toggle, .viewer-close { top: 12px; right: 12px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+.snowflake { animation-duration: var(--duration) !important; animation-iteration-count: infinite !important; }
+#snow { z-index: 0; }
+.page-content { position: relative; z-index: 1; }

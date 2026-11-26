@@ -1,3 +1,4 @@
+(() => {
 const musicToggle = document.getElementById("music-toggle");
 const snow = document.getElementById("snow");
 const snowflakeCount = 40;
@@ -26,3 +27,4 @@ for (let i = 0; i < snowflakeCount; i++) {
 
   snow.appendChild(flake);
 }
+})();
